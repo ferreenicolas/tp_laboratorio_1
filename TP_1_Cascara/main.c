@@ -14,14 +14,15 @@ int main()
 
     while(seguir =='s')
     {
-        printf("1- Ingresar 1er operando (A=x)\n");
-        printf("2- Ingresar 2do operando (B=y)\n");
+        system("cls");
+        printf("1- Ingresar 1er operando (A=%.f)\n", numeroUno);
+        printf("2- Ingresar 2do operando (B=%.f)\n", numeroDos);
         printf("3- Calcular la suma (A+B)\n");
         printf("4- Calcular la resta (A-B)\n");
         printf("5- Calcular la division (A/B)\n");
         printf("6- Calcular la multiplicacion (A*B)\n");
         printf("7- Calcular el factorial (A!)\n");
-        printf("8- Calcular todas las operacione\n");
+        printf("8- Calcular todas las operaciones\n");
         printf("9- Salir\n");
 
         scanf("%d",&opcion);
@@ -29,11 +30,11 @@ int main()
         switch(opcion)
         {
             case 1:
-                printf("Ingresar 1er operando (A=x): \n");
+                printf("Ingresar 1er operando (A=%.f): \n", numeroUno);
                 scanf("%f", &numeroUno);
                 break;
             case 2:
-                 printf("Ingresar 2do operando (B=y)\n");
+                 printf("Ingresar 2do operando (B=%.f)\n", numeroDos);
                  scanf("%f", &numeroDos);
                 break;
             case 3:
@@ -57,8 +58,37 @@ int main()
                 system("pause");
                 break;
             case 7:
+                if(factorial < 1)
+                    {
+                    printf("Error, ingrese otro numero.");
+                    break;
+                    }
+                resultado = factorial(numeroUno);
+                printf("El factorial es: %.f \n", resultado);
+                system("pause");
                 break;
             case 8:
+                resultado = suma(numeroUno, numeroDos);
+                printf("La suma es: %.f \n", resultado);
+
+                resultado = resta(numeroUno, numeroDos);
+                printf("La resta es: %.f \n", resultado);
+
+                resultado = division(numeroUno, numeroDos);
+                printf("La division es: %.2f \n", resultado);
+
+                resultado = multiplicacion(numeroUno, numeroDos);
+                printf("La multiplicacion es: %.f \n", resultado);
+
+                if(factorial < 1)
+                    {
+                    printf("Error, ingrese otro numero.");
+                    break;
+                    }
+                resultado = factorial(numeroUno);
+                printf("El factorial es: %.f \n", resultado);
+                system("pause");
+
                 break;
             case 9:
                 seguir = 'n';
